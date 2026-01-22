@@ -79,4 +79,4 @@ The UI features a unique **Glassmorphism** aesthetic, utilizing translucent laye
 
 ---
 
-Developed with passion by **[Chotikorn Sittakornkowit/Petersen]** 💻
+Developed by **[Chotikorn Sittakornkowit/Petersen]**
