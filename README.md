@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RecruitReady 🚀 | AI Resume Analyzer
 
-## Getting Started
+**Elevate your professional profile with instant, AI-driven feedback tailored for Senior Recruiter standards.**
 
-First, run the development server:
+RecruitReady is a premium, high-performance web application designed to help job seekers perfect their resumes. Leveraging the power of **Llama 3.1-8B AI**, it provides an in-depth audit, ATS compatibility scoring, and intelligent job matching analysis.
+
+---
+
+## ✨ Key Features
+
+- 🔍 **AI-Driven Audit:** Instant scoring and constructive feedback across 4 key categories: Format, Content, Skills, and Experience.
+- 🎯 **Job Matching:** Align your resume with specific job roles to see your compatibility rate and identified missing skills.
+- 📊 **Visual Analytics:** Interactive Radar Charts to visualize your "Skill Balance" and professional profile.
+- 💎 **Premium UI/UX:** Stunning Glassmorphism design with a focus on speed, precision, and readability.
+- 🌓 **Dark/Light Mode:** Full support for system preferences with a sleek, modern aesthetic.
+- 📄 **Real-time Preview:** View your uploaded PDF directly alongside the AI analysis reports.
+- 🛡️ **ATS Optimized:** Built with scoring algorithms that reflect modern Applicant Tracking Systems criteria.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** [Next.js 15](https://nextjs.org/) (App Router), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/) (Animations)
+- **AI Engine:** [Groq Cloud](https://groq.com/) (Llama 3.1-8B Model)
+- **Database:** [Supabase](https://supabase.com/) (PostgreSQL)
+- **Visuals:** [Recharts](https://recharts.org/) (Data Visualization), [Lucide React](https://lucide.dev/) (Icons)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+
+- Node.js (Latest LTS)
+- npm or yarn
+
+### 2. Environment Variables
+
+Create a `.env.local` file in the root directory and add the following:
+
+```env
+# AI API
+GROQ_API_KEY=your_groq_api_key
+
+# Database
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 3. Installation
+
+```bash
+npm install
+```
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Screenshots & Showcase
 
-## Learn More
+The UI features a unique **Glassmorphism** aesthetic, utilizing translucent layers and vibrant primary accents (`#04b453`) to create a futuristic, professional environment.
 
-To learn more about Next.js, take a look at the following resources:
+- **Home Page:** Simple, intuitive PDF upload with optional Job Position input.
+- **Analysis Page:** Single-column professional report with a side-by-side (modal-accessible) original resume preview.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 License
 
-## Deploy on Vercel
+© 2026 RecruitReady. All rights reserved.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Developed with passion by **[Chotikorn Sittakornkowit/Petersen]** 💻

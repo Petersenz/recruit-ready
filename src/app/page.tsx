@@ -1,65 +1,75 @@
-import Image from "next/image";
+'use client';
+
+import { UploadZone } from '@/components/UploadZone';
+import { FileText, Zap, Target, ShieldCheck, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-background relative overflow-hidden selection:bg-primary/30">
+      {/* Dynamic Background */}
+      <div className="absolute top-0 left-0 w-full h-full -z-10">
+        <div className="absolute top-[-15%] right-[-5%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="container mx-auto px-4 py-20 relative z-10">
+        {/* Hero Header */}
+        <div className="text-center mb-16 space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary text-sm font-bold mb-4 animate-bounce">
+            <Sparkles className="w-4 h-4" />
+            Powered by llama-3.1-8B AI
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-foreground bg-clip-text">
+            <span className="text-primary italic">RecruitReady</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <h1 className="text-3xl md:text-5xl font-black tracking-tight text-foreground bg-clip-text">
+            AI <span className="text-primary underline italic">Resume</span> Analyzer
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+            Elevate your professional profile with instant, AI-driven feedback tailored for <span className="text-foreground font-semibold italic">Senior recruiter</span> standards.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Upload Section */}
+        <UploadZone />
+
+        {/* Value Propositions */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 max-w-5xl mx-auto">
+          <FeatureCard
+            icon={<Zap className="w-6 h-6 text-yellow-500" />}
+            title="Instant Audit"
+            desc="Detailed scoring and category breakdown in seconds using llama-3.1-8B AI."
+          />
+          <FeatureCard
+            icon={<Target className="w-6 h-6 text-blue-800" />}
+            title="Job Matching"
+            desc="Align your resume with specific job roles or internship opportunities."
+          />
+          <FeatureCard
+            icon={<ShieldCheck className="w-6 h-6 text-green-500" />}
+            title="ATS Optimized"
+            desc="Ensure your resume passes through HR software without issues."
+          />
         </div>
-      </main>
+
+        {/* Footer info */}
+        <div className="mt-32 text-center text-muted-foreground text-sm font-medium opacity-50">
+          <p>© 2026 AI Resume Analyzer. All rights reserved.</p>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+function FeatureCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
+  return (
+    <div className="glass p-8 rounded-3xl border-border hover:border-primary/50 transition-all hover:scale-[1.05] group">
+      <div className="w-12 h-12 rounded-2xl bg-background/50 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform shadow-sm">
+        {icon}
+      </div>
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
     </div>
   );
 }
