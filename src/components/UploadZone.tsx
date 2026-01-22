@@ -99,7 +99,7 @@ export function UploadZone() {
 
                         <div className="flex flex-col items-center gap-4">
                             {file ? (
-                                <div className="text-green-500">
+                                <div className="text-green-500 flex flex-col items-center">
                                     <FileText className="w-16 h-16 animate-bounce" />
                                     <p className="mt-2 font-semibold">{file.name}</p>
                                 </div>
